@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\title{Deterministic chaos in the elastic pendulum: A simple laboratory for nonlinear dynamics - Review}
+\author{Prajwal O}
+\begin{document}
+\textbf{\maketitle}
+\section{Intro and Aim}
+\textbf{Pertubative studies}:- Approximation methods to solve complex system by taking a small pertubation. We start with a known solution for a simplest case of the system and then add a pertubing hamiltonian representing weak distrubances to the system. The solutions to these pertubed systems can be expressed as corrections to those of the simple systems.
+\section{System Characteristics}
+They considered a Hamiltonian System with N degrees of Freedom, to be chaotic if the maximum number of dynamical variables in Involution* is less than the number of degrees of freedom N.
+
+Dynamical Variables are physical observables represented by an Hermitian operator
+A Hamiltonian is 'Completely integrable' if it has N functionally independent conserved quantities in involution, allowing solutions to be found by integration
+\newline
+Involution means two observables which commute with each other.
+\newline
+The classical poisson bracket with the generator of any transformation gives the infinitesimal evolution with respect to that transformation
+\newline
+\centerline{$\frac{d}{dt}f = [ \hat{H}, f]$}
+\newline
+which means nothing but the time evolution of any observable is given by its poisson bracket with the Hamiltonian. So observables which have its poisson bracket with the hamiltonian as zero is said to be a constant in motion, conserved in time.
+
+\section{Liouville's Theorem}
+\textbf{Liouville’s Theorem}: Consider a region in phase space and watch it evolve over time. Then the shape of the region will generically change, but Liouville’s theorem states that the volume remains the same.
+ \href{https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html}{Ref}
+\subsection{Phase Space}
+The phase space of a physical system is the set of all possible physical states of the given system under a certain given parameter. Like for example , for mechanical systems, the phase space contains all the possible values of position and momentum parameters. It can be a multidimensional space.
+
+
+\section{Understanding regular and non regular behaviours}
+We shall do this by taking a simple example of a pendulum and understand the regimes where the motion is as a free rotator or linear oscillator.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\columnwidth]{simple_pendulum.png}
+\end{figure}
+The motion of the system characterised by coordinate "q" which is the angle made with respect to the normal, and $ \dot{q} $ as the angular velocity.
+
+\begin{align*}
+\mathcal{L} &= \frac{1}{2} m v^2 - m g h \\
+\mathcal{L} &= \frac{1}{2} m l^2 \dot{q}^2 - mg(-l \cos q) \\
+p &= \frac{\partial \mathcal{L}}{\partial \dot{q}} = m l^2 \dot{q} \\
+\intertext{The Hamiltonian is given by:}
+H &= p\dot{q} - \mathcal{L} \\
+H &= m l^2 \dot{q}^2 - \left( \frac{1}{2} m l^2 \dot{q}^2 + mgl \cos q \right) \\
+\intertext{Which yields the equations of motion:}
+\dot{q} &= \frac{p}{ml^2}, \quad \dot{p} = -mgl \sin q \\
+\ddot{q} &= -\frac{g}{l} \sin q \\
+\intertext{and also the constant of motion, the Hamiltonian itself $(\equiv f)$. Therefore the manifold $\mathcal{M}$ is:}
+&\frac{p^2}{2ml^2} - mgl \cos q = f \\
+p &= \sqrt{2ml^2(f + mgl \cos q)}
+\end{align*}
+The phase space will look like
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.52]{phase_space_pendulum.png}
+\end{figure}
+\end{document}
