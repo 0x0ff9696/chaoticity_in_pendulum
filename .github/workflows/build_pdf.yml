@@ -1,0 +1,24 @@
+name: Build and Host PDF
+on: [push] # Run this every time you push a change
+permissions:
+  contents: write
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v2
+        with:
+          # CHANGE 'notes.tex' TO YOUR ACTUAL FILENAME
+          root_file: Chaotic_systems.tex 
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          # This ensures only the PDF is published, not your source code
+          include_files: Chaotic_systems.pdf
